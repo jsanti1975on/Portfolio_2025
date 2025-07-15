@@ -50,9 +50,9 @@ class CustomHTTPRequestHandler(SimpleHTTPRequestHandler):
                     self.wfile.write(f"""
                         <html>
                         <body style='font-family:sans-serif;text-align:center;margin-top:50px;'>
-                            <h2>✅ Upload successful: {html.escape(filename)}</h2>
+                            <h2> Upload successful: {html.escape(filename)}</h2>
                             <button onclick="window.location.href='/'">🔙 Back to Dashboard</button>
-                            <h3>📂 Uploaded Files</h3>
+                            <h3>Uploaded Files</h3>
                             {file_links}
                         </body>
                         </html>
@@ -75,7 +75,7 @@ class CustomHTTPRequestHandler(SimpleHTTPRequestHandler):
             self.wfile.write(json.dumps(self.fetch_orchid_rss()).encode())
         else:
             super().do_GET()
-
+# FUNCTION: Another Project
     def fetch_current_weather(self):
         return {
             "location": "Simulated Lab",
@@ -84,7 +84,7 @@ class CustomHTTPRequestHandler(SimpleHTTPRequestHandler):
             "wind": "None",
             "observation_time": "Simulated"
         }
-
+# FUNCTION: Another Project
     def fetch_orchid_rss(self):
         return [
             {"title": "Orchid Care Tip 1", "link": "#"},
