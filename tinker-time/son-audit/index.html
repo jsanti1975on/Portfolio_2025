@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Monthly Pokémon Audit</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      background: #fefce8;
+      color: #333;
+      padding: 2em;
+    }
+    form {
+      background: #fff;
+      padding: 20px;
+      margin: auto;
+      max-width: 600px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    textarea, input {
+      width: 90%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+    button {
+      padding: 10px 20px;
+      border: none;
+      background-color: #22c55e;
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #16a34a;
+    }
+  </style>
+</head>
+<body>
+  <h1>📊 Pokémon Whatnot Audit</h1>
+  <form method="POST" action="/submit" enctype="multipart/form-data">
+    <input type="text" name="username" placeholder="Your Name" required /><br>
+    <textarea name="summary" rows="8" placeholder="Summary (Spend, Earn, Inventory, Notes)" required></textarea><br>
+    <input type="file" name="photo" accept="image/*"><br>
+    <button type="submit">Submit Audit</button>
+  </form>
+</body>
+</html>
