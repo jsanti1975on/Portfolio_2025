@@ -2,9 +2,10 @@
 
 ## Project Overview:
 
-```PlainText
-This project simulates a secure file server interface within a cyber range environment. It includes an advanced HTML dashboard and a custom Python-based HTTP server, designed to accept, categorize, and safely store uploaded files while displaying live cybersecurity news via RSS.
-```
+
+> This project simulates a secure file server interface within a cyber range environment.
+>  It includes an advanced HTML dashboard and a custom Python-based HTTP server, designed to accept, categorize, and safely store uploaded files while displaying live cybersecurity news via RSS.
+
 
 ## Frontend (HTML Dashboard)
 
