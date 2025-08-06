@@ -1,63 +1,60 @@
-from http.server import HTTPServer, SimpleHTTPRequestHandler
-import cgi, os
+import os
+from flask import Flask, render_template, request, redirect, url_for, send_from_directory, jsonify
+from werkzeug.utils import secure_filename
 from datetime import datetime
+import qrcode
+import netifaces
 
-UPLOAD_DIR = "uploads"
-REPORT_DIR = "reports"
+app = Flask(__name__)
+app.config['UPLOAD_FOLDER'] = 'uploads'
+app.config['CASH_DIR'] = 'cash_entries'
 
-os.makedirs(UPLOAD_DIR, exist_ok=True)
-os.makedirs(REPORT_DIR, exist_ok=True)
+os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
+os.makedirs(app.config['CASH_DIR'], exist_ok=True)
 
-class AuditHandler(SimpleHTTPRequestHandler):
-    def do_POST(self):
-        if self.path == "/submit":
-            ctype, pdict = cgi.parse_header(self.headers.get('Content-Type'))
-            if ctype == 'multipart/form-data':
-                form = cgi.FieldStorage(
-                    fp=self.rfile,
-                    headers=self.headers,
-                    environ={
-                        'REQUEST_METHOD': 'POST',
-                        'CONTENT_TYPE': self.headers.get('Content-Type')
-                    }
-                )
+def get_local_ip():
+    for iface in netifaces.interfaces():
+        addrs = netifaces.ifaddresses(iface).get(netifaces.AF_INET, [])
+        for link in addrs:
+            ip = link.get('addr')
+            if ip and not ip.startswith("127."):
+                return ip
+    return 'localhost'
 
-                username = form.getvalue("username", "anonymous").strip().replace(" ", "_")
-                summary = form.getvalue("summary", "").strip()
-                photoname = form.getvalue("photoname", "").strip().replace(" ", "_")
-                timestamp = datetime.now().strftime("%Y%m%d-%H%M%S")
+@app.route('/')
+def index():
+    local_ip = get_local_ip()
+    qr_url = f"http://{local_ip}:8000"
+    qr_path = os.path.join('static/images/qr_code.png')
+    os.makedirs(os.path.dirname(qr_path), exist_ok=True)
+    qr = qrcode.make(qr_url)
+    qr.save(qr_path)
+    return render_template('index.html', qr_url=qr_url)
 
-                base_filename = f"{username}_{timestamp}"
+@app.route('/upload', methods=['POST'])
+def upload():
+    f = request.files.get('file')
+    if not f or f.filename == '':
+        return "No file selected", 400
+    filename = secure_filename(f.filename)
+    f.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+    return redirect(url_for('index'))
 
-                # Save summary text
-                with open(os.path.join(REPORT_DIR, base_filename + ".txt"), "w") as f:
-                    f.write(summary)
+@app.route('/submit_cash', methods=['POST'])
+def submit_cash():
+    cash = request.form.get('cash_tendered', '').strip()
+    if not cash:
+        return "No value submitted", 400
+    timestamp = datetime.now().strftime("%Y%m%d-%H%M%S")
+    filename = f"cash_{timestamp}.txt"
+    with open(os.path.join(app.config['CASH_DIR'], filename), 'w') as f:
+        f.write(cash)
+    return redirect(url_for('index'))
 
-                # Save photo with optional name
-                if "photo" in form and form["photo"].filename:
-                    photo_data = form["photo"].file.read()
-                    photo_base = photoname if photoname else base_filename
-                    ext = os.path.splitext(form["photo"].filename)[1] or ".jpg"
-                    photo_filename = f"{photo_base}_{timestamp}{ext}"
-                    with open(os.path.join(UPLOAD_DIR, photo_filename), "wb") as f:
-                        f.write(photo_data)
+@app.route('/uploads/<filename>')
+def uploaded_file(filename):
+    return send_from_directory(app.config['UPLOAD_FOLDER'], filename)
 
-                self.send_response(200)
-                self.send_header("Content-type", "text/html")
-                self.end_headers()
-                self.wfile.write(f"""
-                <html><body style="font-family:sans-serif;text-align:center;margin-top:50px;">
-                <h2>Audit Received, {username}!</h2>
-                <p><a href="/">Submit Another</a></p>
-                </body></html>
-                """.encode())
-            else:
-                self.send_error(400, "Bad Request")
-
-def run():
-    os.chdir(os.path.dirname(__file__))
-    print("Audit server running at http://localhost:808")
-    HTTPServer(("", 808), AuditHandler).serve_forever()
-
-if __name__ == "__main__":
-    run()
+if __name__ == '__main__':
+    print(f" Access the dashboard via: http://{get_local_ip()}:8080")
+    app.run(host='0.0.0.0', port=8080, debug=True)
