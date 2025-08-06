@@ -1,7 +1,7 @@
 # Tree stdout
 
 ```bash
-cyber-lab-dashboard/
+Practice-dashboard/
 ├── app.py
 ├── templates/
 │   └── index.html
