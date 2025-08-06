@@ -1,54 +1,39 @@
+==== templates/index.html ====
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mobile-Optimized</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      text-align: center;
-      background: #fefce8;
-      color: #333;
-      padding: 2em;
-    }
-    form {
-      background: #fff;
-      padding: 20px;
-      margin: auto;
-      max-width: 600px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    textarea, input {
-      width: 90%;
-      padding: 10px;
-      margin: 10px 0;
-      border-radius: 6px;
-      border: 1px solid #ccc;
-    }
-    button {
-      padding: 10px 20px;
-      border: none;
-      background-color: #22c55e;
-      color: white;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-    button:hover {
-      background-color: #16a34a;
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cyber Lab Dashboard</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-  <h1>Home Digital Media</h1>
-  <form method="POST" action="/submit" enctype="multipart/form-data">
-    <input type="text" name="username" placeholder="Your Name" required /><br>
-    <textarea name="summary" rows="8" placeholder="Summary (Spend, Earn, Inventory, Notes)" required></textarea><br>
-    <input type="text" name="photoname" placeholder="Photo Name (Optional)" /><br>
-    <input type="file" name="photo" accept="image/*" capture="environment"><br>
-    <button type="submit">Submit Audit</button>
-  </form>
+  <header>
+    <h1>🔐 Cyber Lab Dashboard</h1>
+    <p>Access QR: <img src="{{ url_for('static', filename='images/qr_code.png') }}" alt="QR Code" class="qr-img"></p>
+  </header>
+
+  <main class="dashboard-grid">
+    <section class="card">
+      <h2>Upload Files</h2>
+      <form method="POST" enctype="multipart/form-data" action="/upload">
+        <input type="file" name="file" required>
+        <button type="submit">Upload</button>
+      </form>
+    </section>
+
+    <section class="card">
+      <h2>Cash Tendered</h2>
+      <form method="POST" action="/submit_cash">
+        <input type="number" name="cash_tendered" step="0.01" placeholder="Enter Amount $" required>
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 CyberLab Dashboard</p>
+  </footer>
 </body>
 </html>
-
