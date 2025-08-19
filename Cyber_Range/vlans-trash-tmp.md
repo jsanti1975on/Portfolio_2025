@@ -93,3 +93,72 @@ pfSense should remain the only WAN firewall.
 Enforce VLAN isolation with ACLs and pfSense rules.
 
 ✅ This plan keeps IoT traffic contained, management separate, and VM production routed securely.
+
+
+
+
+1. Check USB device status
+
+Run the following to make sure the system sees your USB-to-serial adapter:
+
+lsusb
+
+
+You should see something like Prolific Technology, Inc. PL2303 Serial Port or FTDI USB Serial Device depending on the chipset.
+
+Also check the kernel messages:
+
+dmesg | grep tty
+
+
+You should see lines like:
+
+[ 1234.567890] usb 1-1.2: ch341-uart converter now attached to ttyUSB0
+
+
+That tells you which device node was created (e.g., /dev/ttyUSB0).
+
+2. Verify device node
+
+List the ttyUSB devices:
+
+ls -l /dev/ttyUSB*
+
+
+You should see /dev/ttyUSB0 (or sometimes ttyUSB1, etc.).
+
+3. Install a terminal program
+
+You’ll need a serial terminal emulator. On Kali:
+
+sudo apt update
+sudo apt install minicom screen picocom -y
+
+
+Any of those will work. I recommend screen for quick connections and minicom if you want a more router-like feel.
+
+4. Open terminal session to the switch
+
+Cisco console defaults: 9600 baud, 8 data bits, no parity, 1 stop bit, no flow control.
+
+Using screen:
+
+sudo screen /dev/ttyUSB0 9600
+
+
+Using minicom (first configure with sudo minicom -s):
+
+sudo minicom -D /dev/ttyUSB0 -b 9600
+
+
+Using picocom:
+
+sudo picocom -b 9600 /dev/ttyUSB0
+
+5. Exit terminal session
+
+For screen: press Ctrl+A then K (and confirm).
+
+For minicom: Ctrl+A then X.
+
+For picocom: Ctrl+A then Ctrl+X.
