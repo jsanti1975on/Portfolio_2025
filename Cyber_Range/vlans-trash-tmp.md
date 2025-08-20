@@ -160,6 +160,7 @@ sudo picocom -b 9600 /dev/ttyUSB0
 
 ===== Completed - Below is quik and dirty save for recall =====
 
+<img width="1130" height="1094" alt="cyber-range-image" src="https://github.com/user-attachments/assets/396ffea1-8556-40fb-9163-35f498bf694d" />
 
 Perfect — thanks for the screenshot, I see you’re on the East switch with VLAN 10 already created. You want to bundle Fa0/7 and Fa0/8 into an EtherChannel, trunk it, and then tie it to VLAN 10 (172.20.10.0/24) for your ESXi server.
 
