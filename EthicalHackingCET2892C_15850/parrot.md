@@ -36,6 +36,24 @@ sudo tee /etc/hosts >/dev/null <<'EOF'
 ff02::1     ip6-allnodes
 ff02::2     ip6-allrouters
 EOF
+```
+
+---
+
+## 🔧 Additional Tool: Kerbrute  
+
+Kerbrute is a popular tool for Kerberos pre-authentication brute forcing and username enumeration.  
+
+### Installation
+```bash
+cd ~/Downloads
+wget https://github.com/ropnop/kerbrute/releases/latest/download/kerbrute_linux_amd64
+chmod +x kerbrute_linux_amd64
+sudo mv kerbrute_linux_amd64 /usr/local/bin/kerbrute
+```
+
+
+
 
 # Reboot to apply
 sudo reboot
