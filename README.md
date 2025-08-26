@@ -1,6 +1,7 @@
 # Jason Santiago — Cybersecurity & Network Engineering
 
-Hands-on projects in network automation, security operations, and ethical hacking. This repo tracks my final year in the **A.S. in Cybersecurity & Network Engineering Technology** (4 classes left) and showcases lab work, PoCs, and write-ups aligned to SOC/NOC roles and Security+ prep.
+Hands-on projects in network automation, security operations, and ethical hacking.  
+*Been labbing since they were called experiments — this portfolio captures the grind, the curiosity, and the results.*
 
 > Currently taking: **CET 2892C – Ethical Hacking (Fall 2025)**
 
@@ -46,13 +47,9 @@ Hands-on projects in network automation, security operations, and ethical hackin
 - **Cyber Defense Competition prep** (regional/national style format)
 
 **Artifacts for Repo**
-- 📑 Executive summary (attack paths, mitigations, lessons learned)  
-- 🖼️ Network diagram of live range & defensive overlays  
-- 🛠️ Config snapshots: firewall rules, hardening baselines, logging pipelines  
-- 🧾 Incident report template + filled example from a competition-style scenario  
 
-> *Been labbing since they were called experiments — the Capstone is where all that curiosity finally connects into a real defensive playbook.*
-
+> *work in progress*
+ 
 ---
 
 ## 🧰 Skills Snapshot
