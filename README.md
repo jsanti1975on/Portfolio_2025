@@ -8,7 +8,7 @@ Hands-on projects in network automation, security operations, and ethical hackin
 
 > Currently taking: **CET 2892C – Ethical Hacking (Fall 2025)**
 
-*Every problem in life is simple once it has been figured out*
+*Every problem in life is simple once it has been figured out.*
 
 ---
 
