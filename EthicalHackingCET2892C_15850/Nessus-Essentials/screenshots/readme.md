@@ -6,5 +6,5 @@
 ```markdown
 ## 📷 Deliverables
 
-![Nessus Dashboard](./screenshots/nessus00-github.png)
+![Nessus Dashboard](./nessus00-github.png)
 
