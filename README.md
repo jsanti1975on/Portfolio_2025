@@ -27,7 +27,7 @@ Hands-on projects in network automation, security operations, and ethical hackin
 
 ## 🎓 Coursework — Final 4 Classes
 
-- [x] **CNT 2414C** – Cybercrime Investigation  
+- [ ] **CNT 2414C** – Cybercrime Investigation  
 - [ ] **CET 2890C** – Advanced Cybersecurity Operations  
 - [x] **CET 2892C** – Ethical Hacking *(In Progress — Fall 2025)*  
 - [ ] **CET 2894C** – Projects in Cyber Security: **Capstone**  
