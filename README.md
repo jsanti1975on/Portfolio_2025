@@ -16,8 +16,8 @@ Hands-on projects in network automation, security operations, and ethical hackin
 
 ### 1) Cyber-Range (Home Lab)
 - Dual-ISP range, VLANs, pfSense, ESXi hosts, Pi-hole DNS sinkhole, AD/DNS/PKI, and segmented “East/West” networks.
-- Artifacts: network diagrams, pfSense rulesets, VLAN configs, and incident drill runbooks.
-- **Focus:** threat emulation, detection visibility, and change control notes.  
+- Artifacts: network diagrams, pfSense rulesets, VLAN configs, etherchannel, playbooks and More! 🤯
+- **Focus:** RHEL, detection visibility, and change control notes.  
 [`projects/Cyber_Range`](projects/Cyber_Range/)
 
 ### 2) Ethical Hacking Labs (CET 2892C)
@@ -31,8 +31,9 @@ Hands-on projects in network automation, security operations, and ethical hackin
 
 ---
 
-## 🎓 Coursework — Final 4 Classes
+## 🎓 Coursework — Final 4 Classes 
 
+> *Taking 1 class a semester to study for industry standard certs*
 - [ ] **CNT 2414C** – Cybercrime Investigation  
 - [ ] **CET 2890C** – Advanced Cybersecurity Operations  
 - [x] **CET 2892C** – Ethical Hacking *(In Progress — Fall 2025)*  
@@ -41,7 +42,11 @@ Hands-on projects in network automation, security operations, and ethical hackin
 ### 4) Capstone — Projects in Cyber Security (CET 2894C)
 - **Credits:** 3 (2 lab hours)  
 - **Prereqs:** CET 2890C (Advanced Cybersecurity Operations), CET 2892C (Ethical Hacking)  
-- **Objective:** Apply and integrate the full Cybersecurity track into a live defensive exercise.
+- **Objective:** Defense skills through regional and national Cyber Defense competitions.
+- [Valencia College Catalog — CET 2894C Projects in Cyber Security](https://catalog.valenciacollege.edu/degrees/associatescience/engineeringtechnology/networkengineeringtechnology)  
+*(Accessed August 26, 2025)*
+
+
 
 **Planned Deliverables**
 - Inventory & assessment of a live network environment
