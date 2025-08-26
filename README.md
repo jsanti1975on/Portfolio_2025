@@ -26,14 +26,13 @@ This repo also aligns with my preparation for the **CompTIA Security+ (July 2025
 
 <pre><code>/network-automation-cybersecurity-lab
 │
-├── /scripts/                # Python, Bash, and PowerShell scripts
-├── /labs/                   # Lab documentation and walkthroughs
-├── /ctf-challenges/         # Capture the Flag exercises
-├── /automation-projects/    # Real-world automation demos
-├── /resources/              # Course references, cheat sheets, and reading
-└── README.md                # This file
-</code></pre>
-
+├── /Cyber_Range/
+├── //                   
+├── //         
+├── //    
+├── //              
+└── README.md            
+  
 ---
 
 ## 🎯 Objectives
