@@ -1,66 +1,108 @@
-# 🧠 Jason Santiago   | Summer 2025
+# Jason Santiago — Cybersecurity & Network Engineering
 
-## 📌 Overview
+Hands-on projects in network automation, security operations, and ethical hacking. This repo tracks my final year in the **A.S. in Cybersecurity & Network Engineering Technology** (4 classes left) and showcases lab work, PoCs, and write-ups aligned to SOC/NOC roles and Security+ prep.
 
-Welcome to my professional project repository. I will showcase projects developed along my academic journey. My awarded Valence State college certifications include.
-
-- Network Support  
-- Network Administration
-
-This repo also aligns with my preparation for the **CompTIA Security+ (July 2025)** and showcases my evolving skill set in scripting, automation, and cybersecurity fundamentals through hands-on projects and lab work.
+> Currently taking: **CET 2892C – Ethical Hacking (Fall 2025)**
 
 ---
 
-## 🧰 Skills & Tools
+## 🚀 Featured Projects
 
-- Python for projects for that get the job done.  
-- Bash scripting & automation  
-- Wireshark, Nmap, and open-source reconnaissance tools => Security Onion ect...
-- Capture the Flag (CTF) scenarios  
-- pfSense, Debian Bookwork 12 , DNS Sinkholes "No Proprietary" => RHEL 9
-- Exposure to Cyber-Range technologies to be showcased in Cyber-Awarness videos, mock CTF challenges and showcase PoC writeups. 
+### 1) Cyber-Range (Home Lab)
+- Dual-ISP range, VLANs, pfSense, ESXi hosts, Pi-hole DNS sinkhole, AD/DNS/PKI, and segmented “East/West” networks.
+- Artifacts: network diagrams, pfSense rulesets, VLAN configs, and incident drill runbooks.
+- **Focus:** threat emulation, detection visibility, and change control notes.  
+[`projects/Cyber_Range`](projects/Cyber_Range/)
 
----
+### 2) Ethical Hacking Labs (CET 2892C)
+- Web vulns, auth bypasses, upload abuse, and Windows/Linux privilege escalation.
+- Deliverables: reproducible lab write-ups (steps → evidence → mitigation).
+[`projects/EthicalHackingCET2892C_15850`](projects/EthicalHackingCET2892C_15850/)
 
-## 📂 Repository Structure
-
-<pre><code>/network-automation-cybersecurity-lab
-│
-├── /Cyber_Range/
-├── //                   
-├── //         
-├── //    
-├── //              
-└── README.md            
-  
----
-
-## 🎯 Objectives
-
-- Build a library of scripting and automation tools
-- Practice secure coding principles
-- Prepare for Security+ certification
-- Simulate real-world cybersecurity operations
-- Create a professional online portfolio
+### 3) Linux Enterprise / Red Hat Track
+- Service hardening, SELinux basics, user & auth policy, automation.
+[`projects/Red_Hat_Enterprise_Linux_CTS-2322C-25584`](projects/Red_Hat_Enterprise_Linux_CTS-2322C-25584/)
 
 ---
 
-## 🛡️ Upcoming Milestones
+## 🎓 Coursework — Final 4 Classes
 
-- [ ] Complete bash scripting every day cyber range use
-- [ ] Integrate logging and alerting using syslog/SIEM simulation
-- [ ] Launch personal Cyber Range with a buisness perspective "Orkidz.Net"
-- [ ] Complete Master OTW’s Security+ bootcamp
-- [ ] Begin Fall 2025 coursework: CET 2890C & CET 2892C
+- [x] **CNT 2414C** – Cybercrime Investigation  
+- [ ] **CET 2890C** – Advanced Cybersecurity Operations  
+- [x] **CET 2892C** – Ethical Hacking *(In Progress — Fall 2025)*  
+- [ ] **CET 2894C** – Projects in Cyber Security: **Capstone**  
 
----
-
-## 📜 License
-
-This project is for educational purposes only. All tools and scripts are used within legal and ethical guidelines.
+> Capstone theme: production-style lab, PoC exploitation to post-auth RCE, and blue-teamable detections with documentation and evidence.
 
 ---
 
-## 🙋‍♂️ About Me
+## 🧰 Skills Snapshot
 
-Aspiring cybersecurity analyst with a focus on automation, scripting, and ethical hacking. Actively pursuing certifications and building a hands-on skill set in a structured academic and practical environment.  
+**Network & Infra:** VLANs, EtherChannel, pfSense, Cisco Catalyst (3560), ESXi, DNS/PKI, AD DS  
+**Security Ops:** log analysis, sinkholing (Pi-hole), exposure analysis, service hardening, incident runbooks  
+**Offensive Basics:** enumeration (Nmap/dirb), web vulns, credential attacks, upload/RCE chains  
+**Tooling & Scripting:** Bash, Python, PowerShell, VBA; Git/GitHub; Flask for quick internal tools  
+**CTF & Labs:** picoCTF, TryHackMe, HackTheBox (write-ups linked in project folders)
+
+---
+
+## 🪪 Certifications & Education
+
+- **Valencia College – A.A. (2013)**  
+  ![AA](assets/certs/AA.png)
+
+- **Technical Certificate — Network Administration (2025)**  
+  ![Network Administration](assets/certs/Net-Admin.png)
+
+- **Technical Certificate — Network Support (2025)**  
+  ![Network Support](assets/certs/Net-Support.png)
+
+- **Electronics Technology — 1400 Hours (2012)**  
+  ![Electronics](assets/certs/2012-Electronics-Cert.png)
+
+- **AutoCAD / Architectural Drafting (2007)**  
+  ![CAD](assets/certs/2007-CAD-Cert.png)
+
+- **Linux Enterprise Server Administration — Grade 98.6%** *(paper certificate ordered)* :contentReference[oaicite:0]{index=0}
+
+> Target: **CompTIA Security+ (July 2025)**
+
+---
+
+## 🗺️ What’s Next (Roadmap)
+
+- Finish **Ethical Hacking** with curated, high-signal lab reports (attack → evidence → fix).
+- **Capstone**: production-grade PoC + detection notes, with red/blue artifacts.
+- Harden pfSense/ESXi/Windows: PKI, TLS, log shipping, and rule change governance.
+- Security+ exam wrap-up with a compact study map & cheatsheets.
+
+---
+
+## 📫 Contact & Links
+
+- GitHub: **@jasanti19750n** / **@jasdigitaltools**
+- (Optional) LinkedIn / Portfolio site links here
+
+---
+
+<sub>Minimal, results-first portfolio. Each project folder contains a 1-page README (goal, architecture, steps, evidence, lessons learned).</sub>
+
+
+---
+Portfolio_2025/
+├─ README.md
+├─ assets/
+│  ├─ headshot.jpg                (optional)
+│  └─ certs/
+│     ├─ 2007-CAD-Cert.png
+│     ├─ 2012-Electronics-Cert.png
+│     ├─ AA.png
+│     ├─ Net-Admin.png
+│     └─ Net-Support.png
+├─ projects/
+│  ├─ Cyber_Range/                (lab notes, diagrams, PoCs)
+│  ├─ EthicalHackingCET2892C_15850/
+│  ├─ Red_Hat_Enterprise_Linux_CTS-2322C-25584/
+│  └─ tinker-time/
+---
+
