@@ -2,7 +2,7 @@
 
 ![West Side File Server Dashboard](images/2025-07-26-dashboard.png)
 
-**Figure: Cyber Range - West Side File Server Dashboard | VLAN10 **
+**Figure: Cyber Range - West Side File Server Dashboard | VLAN10**
 
 This screenshot displays the custom HTML dashboard used in the HTTP file server project. Key components include:
 - Modular panels for RHEL, Cisco, Windows Server, CompTIA Security+, and TryHackMe.
