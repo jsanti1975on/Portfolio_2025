@@ -104,7 +104,7 @@ Hands-on projects in network automation, security operations, and ethical hackin
 <sub>Minimal, results-first portfolio. Each project folder contains a 1-page README (goal, architecture, steps, evidence, lessons learned).</sub>
 
 
----
+```Bash
 Portfolio_2025/
 ├─ README.md
 ├─ assets/
@@ -120,5 +120,5 @@ Portfolio_2025/
 │  ├─ EthicalHackingCET2892C_15850/
 │  ├─ Red_Hat_Enterprise_Linux_CTS-2322C-25584/
 │  └─ tinker-time/
----
+```
 
