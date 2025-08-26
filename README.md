@@ -3,6 +3,8 @@
 Hands-on projects in network automation, security operations, and ethical hacking.  
 *Been labbing since they were called experiments — this portfolio captures the grind, the curiosity, and the results.*
 
+![Headshot](assets/headshot2025.png)
+
 > Currently taking: **CET 2892C – Ethical Hacking (Fall 2025)**
 
 ---
