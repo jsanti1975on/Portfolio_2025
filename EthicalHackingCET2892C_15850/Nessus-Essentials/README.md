@@ -44,7 +44,5 @@ sudo systemctl start nessusd
 
 ![Nessus Dashboard](./screenshots/nessus00-github.png)
 
-
-
-EthicalHackingCET2892C_15850/Nessus-Essentials/screenshots/nessus00-github.png
+![Nessus Dashboard](./screenshots/nessus01-github.png)
 
