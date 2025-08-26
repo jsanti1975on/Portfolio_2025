@@ -43,8 +43,9 @@ Hands-on projects in network automation, security operations, and ethical hackin
 - **Credits:** 3 (2 lab hours)  
 - **Prereqs:** CET 2890C (Advanced Cybersecurity Operations), CET 2892C (Ethical Hacking)  
 - **Objective:** Defense skills through regional and national Cyber Defense competitions.
-- [Valencia College Catalog — CET 2894C Projects in Cyber Security](https://catalog.valenciacollege.edu/degrees/associateinscience/engineeringtechnology/networkengineeringtechnology/#programrequirementstext)  
-*(Accessed August 26, 2025)*
+
+>  [Valencia College Catalog — CET 2894C Projects in Cyber Security](https://catalog.valenciacollege.edu/degrees/associateinscience/engineeringtechnology/networkengineeringtechnology/#programrequirementstext)  
+> *(Accessed August 26, 2025)*
 
 **Planned Deliverables**
 - Inventory & assessment of a live network environment
