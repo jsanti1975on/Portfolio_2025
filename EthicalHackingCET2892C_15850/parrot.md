@@ -26,7 +26,7 @@ The VM must be saved and snapshotted for reuse.
 ### Fixing Hostname
 ```bash
 # Set hostname
-sudo hostnamectl set-hostname santiago
+sudo hostnamectl set-hostname redacted
 
 # Overwrite /etc/hosts
 sudo tee /etc/hosts >/dev/null <<'EOF'
