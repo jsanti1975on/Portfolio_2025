@@ -32,7 +32,26 @@ Hands-on projects in network automation, security operations, and ethical hackin
 - [x] **CET 2892C** – Ethical Hacking *(In Progress — Fall 2025)*  
 - [ ] **CET 2894C** – Projects in Cyber Security: **Capstone**  
 
-> Capstone theme: production-style lab, PoC exploitation to post-auth RCE, and blue-teamable detections with documentation and evidence.
+### 4) Capstone — Projects in Cyber Security (CET 2894C)
+- **Credits:** 3 (2 lab hours)  
+- **Prereqs:** CET 2890C (Advanced Cybersecurity Operations), CET 2892C (Ethical Hacking)  
+- **Objective:** Apply and integrate the full Cybersecurity track into a live defensive exercise.
+
+**Planned Deliverables**
+- Inventory & assessment of a live network environment
+- Hardening of endpoints, servers, and network services
+- Monitoring & detection with log analysis, sinkhole/DNS, and pfSense/IDS integrations
+- Red-team injects: exploit → detection → incident response
+- Blue-team actions: incident handling, containment, reporting
+- **Cyber Defense Competition prep** (regional/national style format)
+
+**Artifacts for Repo**
+- 📑 Executive summary (attack paths, mitigations, lessons learned)  
+- 🖼️ Network diagram of live range & defensive overlays  
+- 🛠️ Config snapshots: firewall rules, hardening baselines, logging pipelines  
+- 🧾 Incident report template + filled example from a competition-style scenario  
+
+> *Been labbing since they were called experiments — the Capstone is where all that curiosity finally connects into a real defensive playbook.*
 
 ---
 
