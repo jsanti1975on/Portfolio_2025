@@ -42,6 +42,9 @@ sudo systemctl start nessusd
 
 > Installation complete
 
-![Nessus Dashboard](./nessus00-github.png)
+![Nessus Dashboard](./Nessus-Essentials/screenshots/nessus00-github.png)
 
+
+
+EthicalHackingCET2892C_15850/Nessus-Essentials/screenshots/nessus00-github.png
 
