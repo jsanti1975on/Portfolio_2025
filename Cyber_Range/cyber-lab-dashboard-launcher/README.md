@@ -3,6 +3,9 @@ This launcher is for demonstration and kiosk workflows in a controlled, consente
 
 # Cyber-Lab Dashboard Launcher (Win32, no console)
 
+<img width="1657" height="887" alt="exe-00" src="https://github.com/user-attachments/assets/bf68d0e8-ceac-4002-acb2-8bb68e1a8d5a" />
+
+
 A tiny Windows launcher that opens your lab dashboard **without flashing a console** by relaunching itself minimized via **PowerShell**. Useful for kiosk/JumpBox workflows and as a teaching step before moving to config-driven variants.
 
 ---
