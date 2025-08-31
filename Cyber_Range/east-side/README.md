@@ -21,3 +21,34 @@ east-side-server/
 └── scripts/
     └── setup.sh                      # (optional) startup automation, service scripts
 ```
+
+# Setup .sh script
+
+```bash
+#!/bin/bash
+
+echo "Setting up East Side Server directories..."
+
+mkdir -p orchids
+mkdir -p docs
+mkdir -p after-work
+mkdir -p assignments
+mkdir -p uploads
+mkdir -p logs
+mkdir -p templates
+mkdir -p static/css
+mkdir -p scripts
+
+touch logs/server.log
+
+echo "Folders created:"
+echo "  orchids/ docs/ after-work/ assignments/ uploads/ logs/ templates/ static/css/ scripts/"
+
+# Optional: copy placeholder success image. Using Capt Clip for now
+if [[ -f success.png ]]; then
+    mv success.png static/
+    echo "Moved success.png into static/"
+fi
+
+echo "Setup complete!"
+```
