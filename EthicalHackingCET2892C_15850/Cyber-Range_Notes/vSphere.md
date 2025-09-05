@@ -20,7 +20,13 @@ Upload the following files:
 
 .mf (optional but recommended)
 
-📷 Screenshot Placeholder – Datastore Browser showing OVF files
+<img width="1891" height="961" alt="OVF_Edit" src="https://github.com/user-attachments/assets/eb2f1cf0-16b9-4e0e-a061-825de222171a" />
+
+<img width="1031" height="669" alt="Line 25 Unsupported Hardware" src="https://github.com/user-attachments/assets/5b6d6b4c-9026-4565-bd87-150a8801eedb" />
+
+<img width="1031" height="669" alt="Line 25 Unsupported Hardware" src="https://github.com/user-attachments/assets/e7e55e69-d603-4dff-922b-1ec3c825fdd2" />
+
+📷 Helper Images
 
 📌 Step 2 – Deploy OVF
 
