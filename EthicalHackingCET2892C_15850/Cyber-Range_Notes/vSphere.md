@@ -24,7 +24,8 @@ Upload the following files:
 
 <img width="1031" height="669" alt="Line 25 Unsupported Hardware" src="https://github.com/user-attachments/assets/5b6d6b4c-9026-4565-bd87-150a8801eedb" />
 
-<img width="1031" height="669" alt="Line 25 Unsupported Hardware" src="https://github.com/user-attachments/assets/e7e55e69-d603-4dff-922b-1ec3c825fdd2" />
+<img width="1962" height="1120" alt="Windows 7 Deployed Image" src="https://github.com/user-attachments/assets/e53089c5-4692-4ea6-9842-b0f93661d379" />
+
 
 📷 Helper Images
 
