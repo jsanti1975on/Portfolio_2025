@@ -3,7 +3,7 @@
 This document provides the **clean baseline configuration** for the East and West Cisco Catalyst 3560 switches, 
 integrated with the Cisco RV340 router serving as the DHCP server for VLAN 10 (VM and Wi-Fi clients).
 
-##  Network Overview
+## 🖧 Network Overview
 
 - **East Switch**
   - Trunk to **West** over Gi0/1 (fiber)
@@ -18,7 +18,7 @@ integrated with the Cisco RV340 router serving as the DHCP server for VLAN 10 (V
 
 ---
 
-##  East Switch Configuration
+## ⚙️ East Switch Configuration
 
 ```plaintext
 hostname East
@@ -55,7 +55,7 @@ interface fa0/1
 
 ---
 
-##  West Switch Configuration
+## ⚙️ West Switch Configuration
 
 ```plaintext
 hostname West
@@ -101,7 +101,7 @@ interface fa0/3
 
 ---
 
-## Cisco RV340 Checklist
+## 🖥️ Cisco RV340 Checklist
 
 1. Navigate to **LAN > VLAN Settings**
    - Add **VLAN 10** (172.20.10.0/24)
@@ -114,7 +114,7 @@ interface fa0/3
 
 ---
 
-##  Verification Commands
+## ✅ Verification Commands
 
 Run these on both East and West:
 
@@ -128,3 +128,50 @@ You should see:
 - Native VLAN = 999
 - Allowed VLANs = 10,999
 - No CDP mismatch errors
+
+
+---
+
+## 🗺️ Topology Diagram (ASCII)
+
+```
+                ┌──────────────────────────────┐
+                │          Cisco RV340          │
+                │  Router / DHCP for VLAN 10    │
+                │  GW: 172.20.10.254            │
+                └─────┬─────────────────────────┘
+                      │  (Trunk to East, Native VLAN 999, Allowed 10,999)
+                      │
+                ┌─────┴──────────────────────────────────────┐
+                │                 East 3560                  │
+                │  Gi0/1  <──── Trunk ────>  West 3560      │
+                │  Fa0/1  <──── Trunk ────>  RV340          │
+                └─────┬──────────────────────────────────────┘
+                      │  (Gi0/1 Trunk: Native 999, Allowed 10,999)
+                      │
+                ┌─────┴──────────────────────────────────────┐
+                │                 West 3560                  │
+                │  Gi0/1  <──── Trunk ────>  East 3560      │
+                │                                            │
+                │  Fa0/8  ── Access VLAN 10 ──>  WLC 2504   │
+                │  Fa0/3  ── Access VLAN 10 ──>  AP (PoE)   │
+                │                                            │
+                │ (Optional) ESXi/Hosts on access ports V10 │
+                └────────────────────────────────────────────┘
+
+VLANs:
+  - VLAN 10  = VM / Wi-Fi Clients (e.g., 172.20.10.0/24 via RV340 DHCP)
+  - VLAN 999 = Native / Transit (no DHCP)
+
+Trunk Policy (must match on both ends):
+  - switchport trunk native vlan 999
+  - switchport trunk allowed vlan 10,999
+```
+
+### Legend
+- **Trunk**: IEEE 802.1Q, Native VLAN **999**, Allowed **10,999**
+- **Access Ports**: VLAN **10**
+- **DHCP**: Served by **RV340** for VLAN 10 (172.20.10.0/24)
+- **DNS**: Use pfSense (10.10.10.1) or Pi-hole (10.10.10.30) upstream
+
+---
