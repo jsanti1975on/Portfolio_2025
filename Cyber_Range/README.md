@@ -1,4 +1,4 @@
-# Cyber Range Project a.k.a Training Environment
+# Cyber Range Project a.k.a Training Environment West
 
 ![West Side File Server Dashboard](images/2025-07-26-dashboard.png)
 
