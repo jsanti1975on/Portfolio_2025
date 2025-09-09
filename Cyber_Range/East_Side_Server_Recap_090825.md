@@ -144,6 +144,7 @@ Repeat for:
 
 Uploaded files are routed based on filename prefix:
 
+```bash
 | Prefix       | Routed Folder |
 |--------------|----------------|
 | \`orchid_\`    | \`orchids/\`     |
@@ -151,6 +152,7 @@ Uploaded files are routed based on filename prefix:
 | \`assign_\`    | \`assignments/\` |
 | \`after_\`     | \`after-work/\`  |
 | *(default)*  | \`assignments/\` |
+```
 
 Configured in \`config.yaml\` (or use built-in defaults).
 
