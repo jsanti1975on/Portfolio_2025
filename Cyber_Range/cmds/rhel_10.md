@@ -50,6 +50,37 @@ sudo vi /etc/httpd/conf.d/eastside.conf
 </VirtualHost>
 ```
 
+```bash
+# Trying Modified Version
+<VirtualHost *:80>
+    ServerName eastside.local
+
+    DocumentRoot /var/www/eastside-server
+    ProxyPreserveHost On
+
+    <Directory /var/www/eastside-server>
+        Options Indexes FollowSymLinks
+        AllowOverride All
+        Require all granted
+    </Directory>
+
+    # Proxy API calls to Python backend
+    ProxyPass "/fetch_rss" "http://localhost:8000/fetch_rss"
+    ProxyPassReverse "/fetch_rss" "http://localhost:8000/fetch_rss"
+
+    ProxyPass "/assignments/upload" "http://localhost:8000/assignments/upload"
+    ProxyPassReverse "/assignments/upload" "http://localhost:8000/assignments/upload"
+
+    # Optional: proxy /upload or other backend routes
+    ProxyPass "/upload" "http://localhost:8000/upload"
+    ProxyPassReverse "/upload" "http://localhost:8000/upload"
+
+    ErrorLog /var/log/httpd/eastside-error.log
+    CustomLog /var/log/httpd/eastside-access.log combined
+</VirtualHost>
+```
+
+
 
 
 
