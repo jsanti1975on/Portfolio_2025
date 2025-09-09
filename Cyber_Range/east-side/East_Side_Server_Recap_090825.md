@@ -16,7 +16,7 @@ A lightweight full-stack project using Python’s `http.server`, Apache reverse 
 
 ## 🗂 Project Structure
 
-\`\`\`
+```bash
 eastside-server/
 │
 ├── server.py                   # Python server with custom routing
@@ -36,7 +36,7 @@ eastside-server/
 ├── assignments/               # Routed by prefix: assign_
 ├── uploads/                    # Fallback location
 └── after-work/                 # Routed by prefix: after_
-\`\`\`
+```
 
 ---
 
