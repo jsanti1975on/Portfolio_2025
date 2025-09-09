@@ -243,7 +243,7 @@ east-side-server/
 </html>
 ```
 
-```Python
+```python
 import logging
 from http.server import SimpleHTTPRequestHandler, HTTPServer
 import os
