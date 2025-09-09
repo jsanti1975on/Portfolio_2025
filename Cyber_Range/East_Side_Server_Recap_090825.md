@@ -16,7 +16,7 @@ A lightweight full-stack project using Python’s `http.server`, Apache reverse 
 
 ## 🗂 Project Structure
 
-\`\`\`
+```bash
 eastside-server/
 │
 ├── server.py                   # Python server with custom routing
@@ -36,7 +36,7 @@ eastside-server/
 ├── assignments/               # Routed by prefix: assign_
 ├── uploads/                    # Fallback location
 └── after-work/                 # Routed by prefix: after_
-\`\`\`
+```
 
 ---
 
@@ -44,21 +44,21 @@ eastside-server/
 
 Install dependencies:
 
-\`\`\`bash
+```bash
 pip3 install feedparser pyyaml requests
-\`\`\`
+```
 
 Start the server:
 
-\`\`\`bash
+```bash
 python3 server.py
-\`\`\`
+```
 
 By default, it runs on:
 
-\`\`\`
+```bash
 http://localhost:8000
-\`\`\`
+```
 
 Use your server's IP if you're accessing externally (e.g. \`http://192.168.0.23:8000\`)
 
