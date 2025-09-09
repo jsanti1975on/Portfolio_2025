@@ -17,6 +17,14 @@ source <name of virtual environment>/bin/activate
 ```
 
 ```bash
-sudo 
+sudo dnf install httpd -y
+sudo systemctl enable --now httpd
 ```
+
+```bash
+sudo mkdir -p /var/www/eastside-server/{uploads,orchids,docs,after-work,assignments,images}
+sudo cp -r your_project/* /var/www/eastside-server/
+```
+
+
 
