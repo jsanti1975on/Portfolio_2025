@@ -68,7 +68,7 @@ Use your server's IP if you're accessing externally (e.g. \`http://192.168.0.23:
 
 Apache config file (\`/etc/httpd/conf.d/eastside.conf\`):
 
-\`\`\`apache
+```apache
 <VirtualHost *:80>
     ServerName eastside.local
     DocumentRoot /var/www/eastside-server
@@ -92,14 +92,14 @@ Apache config file (\`/etc/httpd/conf.d/eastside.conf\`):
     ErrorLog /var/log/httpd/eastside-error.log
     CustomLog /var/log/httpd/eastside-access.log combined
 </VirtualHost>
-\`\`\`
+```
 
 Enable and start Apache:
 
-\`\`\`bash
+```bash
 sudo dnf install httpd mod_proxy mod_proxy_http -y
 sudo systemctl enable --now httpd
-\`\`\`
+```
 
 ---
 
@@ -107,9 +107,9 @@ sudo systemctl enable --now httpd
 
 Make sure Python has write access to target directories:
 
-\`\`\`bash
+```bash
 chmod -R 777 assignments uploads
-\`\`\`
+```
 
 ---
 
@@ -117,10 +117,10 @@ chmod -R 777 assignments uploads
 
 If your VM is behind a firewall or using multiple NICs:
 
-\`\`\`bash
+```bash
 sudo firewall-cmd --zone=public --add-port=8000/tcp --permanent
 sudo firewall-cmd --reload
-\`\`\`
+```
 
 ---
 
@@ -128,10 +128,10 @@ sudo firewall-cmd --reload
 
 You can create placeholder PNGs using ImageMagick:
 
-\`\`\`bash
+```bash
 convert -size 300x200 xc:gray -gravity center -pointsize 24 \
   -draw "text 0,0 'Orchid'" images/orchid.png
-\`\`\`
+```
 
 Repeat for:
 - \`docs.png\`
