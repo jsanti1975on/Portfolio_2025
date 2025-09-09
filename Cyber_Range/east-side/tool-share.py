@@ -1,7 +1,7 @@
 # Generate the certs=> 
 # openssl req -new -x509 -keyout key.pem -out cert.pem -days 365 -nodes
 
-# Parrot
+# Depricated
 import http.server, ssl
 
 server_address = ('0.0.0.0', 8443)
@@ -42,6 +42,7 @@ if __name__ == "__main__":
     httpd.socket = ctx.wrap_socket(httpd.socket, server_side=True)
     print(f"Serving HTTPS from {SERVE_DIR} at https://{HOST}:{PORT}/")
     httpd.serve_forever()
+
 
 
 
