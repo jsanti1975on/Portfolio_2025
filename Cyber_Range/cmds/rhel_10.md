@@ -9,11 +9,11 @@ sudo dnf install command-line-assistant
 ```
 
 ```bash
-sudo 
+python3 -m venv <name of virtual environment>
 ```
 
 ```bash
-sudo 
+source <name of virtual environment>/bin/activate
 ```
 
 ```bash
