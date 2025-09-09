@@ -27,5 +27,41 @@ sudo mkdir -p /var/www/eastside-server/{uploads,orchids,docs,after-work,assignme
 sudo cp -r your_project/* /var/www/eastside-server/
 ```
 
+```bash
+sudo chown -R apache:apache /var/www/eastside-server
+sudo chmod -R 755 /var/www/eastside-server
+```
+
+```bash
+sudo vi /etc/httpd/conf.d/eastside.conf
+<VirtualHost *:80>
+    ServerName eastside.local
+
+    DocumentRoot /var/www/eastside-server
+
+    <Directory /var/www/eastside-server>
+        Options Indexes FollowSymLinks
+        AllowOverride All
+        Require all granted
+    </Directory>
+
+    ErrorLog /var/log/httpd/eastside-error.log
+    CustomLog /var/log/httpd/eastside-access.log combined
+</VirtualHost>
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
