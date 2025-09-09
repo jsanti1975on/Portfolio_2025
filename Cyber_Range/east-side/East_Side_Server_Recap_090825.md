@@ -1,4 +1,4 @@
-# 🌐 East Side Server (IoT Subnet Dashboard)
+# 🌐 East Side Server (IoT Subnet Dashboard) {^v^} We need to change permissions to allow file save in doc dir ect...
 
 A lightweight full-stack project using Python’s `http.server`, Apache reverse proxy, and a dashboard UI for IoT documentation, orchid logs, uploads, and RSS feeds.
 
