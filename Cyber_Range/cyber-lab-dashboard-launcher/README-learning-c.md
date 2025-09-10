@@ -70,7 +70,21 @@ By working through this branch, you will:
 ---
 
 ```bash
-Build the project, attach to a process or manually do the process by clicking it e.g. Open your favorite site or portal
-Attach to a printer process e.g. firewire and drivers / Then see how many times it is launched when logging in and out on different subnets and time.
-My experiance was with a new wireless scanner.
-```
+ * === Experiment Notes ===
+ *
+ * Build the project, then test launching it in two ways:
+ *   1) Attach the EXE to an existing process (e.g., via Task Scheduler trigger).
+ *   2) Run it manually by double-clicking — it should open your favorite site or portal.
+ *
+ * You can also attach it to a printer-related process (for example, a FireWire
+ * device, printer driver, or scanner event). Then observe:
+ *
+ *   - How many times the EXE launches when logging in and out.
+ *   - Whether behavior changes across different network subnets.
+ *   - Timing differences between events.
+ *
+ * My own test case was with a new wireless scanner, which reliably triggered
+ * the launcher. This shows how peripheral events can act as "triggers"
+ * for execution inside a controlled lab.
+ ```
+
