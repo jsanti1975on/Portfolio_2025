@@ -69,18 +69,6 @@ By working through this branch, you will:
 
 ---
 
-## 🔀 Workflow
-
-To create and work with this branch:
-
 ```bash
-git checkout main
-git pull origin main
-
-git checkout -b learning-c
-# Add the demo files here
-
-git add .
-git commit -m "Add learning branch with C breakdown demos"
-git push -u origin learning-c
+Building the project attach to a process to see work flow - then follow along
 ```
