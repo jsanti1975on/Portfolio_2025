@@ -72,5 +72,5 @@ By working through this branch, you will:
 ```bash
 Build the project, attach to a process or manually do the process by clicking it e.g. Open your favorite site or portal
 Attach to a printer process e.g. firewire and drivers / Then see how many times it is launched when logging in and out on different subnets and time.
-My experiance was with a new model Prinet.
+My experiance was with a new wireless scanner.
 ```
