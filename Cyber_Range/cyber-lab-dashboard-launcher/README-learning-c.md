@@ -1,4 +1,4 @@
-# Learning C Branch — Cyber-Lab Launcher
+# Learning C Branch — Cyber-Lab Launcher - Not a branch yet!!
 
 This branch is a **teaching and breakdown branch** of the Cyber-Lab Dashboard Launcher project.  
 Instead of focusing on the final product, this branch explains **how the program runs step by step**, with smaller demo files to highlight individual C concepts.
