@@ -1,160 +1,86 @@
-This launcher is for demonstration and kiosk workflows in a controlled, consented lab. It does not persist, elevate, obfuscate, or communicate beyond opening a local dashboard URL after a short delay. All use occurs on systems I own/manage.
+# Cyber-Lab Dashboard
 
-
-# Cyber-Lab Dashboard Launcher (Win32, no console)
-
-<img width="1657" height="887" alt="exe-00" src="https://github.com/user-attachments/assets/bf68d0e8-ceac-4002-acb2-8bb68e1a8d5a" />
-
-
-A tiny Windows launcher that opens your lab dashboard **without flashing a console** by relaunching itself minimized via **PowerShell**. Useful for kiosk/JumpBox workflows and as a teaching step before moving to config-driven variants.
+This project is a **mini cyber-range dashboard** that combines:
+- A custom Python backend server
+- Interactive HTML pages for awareness training
+- A simple CSS theme
 
 ---
 
-## Repository Layout
+## 📂 Project Structure
 
-```bash
-cyber-lab-dashboard-launcher/
-├─ README.md
-├─ build.sh # one-command build on Kali/Debian/Ubuntu
-├─ .gitignore
-└─ src/
-├─ open_dash.c # PowerShell minimized relaunch + ping + open URL
-├─ icon.rc # embeds app icon into the EXE
-└─ open-dash.ico # multi-resolution icon (16..256px)
+```
+cyber-lab-dashboard/
+├── server.py        # Python backend (file uploads + RSS + static serving)
+├── index.html       # Main page with underscore button quiz
+├── tux-talks.html   # Tux animation + "compromised" message
+└── style.css        # Shared styling
 ```
 
-## Prerequisites (builder host)
+---
 
+## ▶️ Running the Project
+
+### 1. Install dependencies (in WSL/Ubuntu)
 ```bash
 sudo apt update
-sudo apt install -y mingw-w64 imagemagick
+sudo apt install python3-pip -y
+pip3 install requests feedparser
 ```
 
-## Build
-
+### 2. Start the server
 ```bash
-./build.sh
-# Output: ./open-dash.exe
+cd cyber-lab-dashboard
+python3 server.py
 ```
 
-> *Copy open-dash.exe to a Windows machine and double-click*
-
-## Configure (edit hardcoded targets)
-> In src/open_dash.c, set the active network:
-
-```c
-// VLAN1 example
-system("ping 172.20.10.1");
-system("start msedge.exe http://172.20.10.30:8000/");
-
-// Mgmt example
-// system("ping 10.10.10.1");
-// system("start msedge.exe http://10.10.10.30:8000/");
+You should see a log line like:
 ```
-> Rebuild to bake changes into the EXE.
-
-## Icon (multi-resolution .ico)
-
-> Place your PNG in src/ (ideally 512×512, transparent background), then run:
-```bash
-cd src
-convert myicon.png -resize 256x256 \
-  -define icon:auto-resize=16,32,48,64,128,256 \
-  open-dash.ico
-```
-> Rebuild to embed.
-
-## Source Code
-
-```bash
-src/open_dash.c
+Starting httpd on port 8000...
 ```
 
-```c
-#include <windows.h>
-#include <stdio.h>
-#include <stdlib.h>
-
-int main() {
-    const char *tmpDir = getenv("TEMP");
-    char flagPath[MAX_PATH];
-    snprintf(flagPath, MAX_PATH, "%s\\minimized.flag", tmpDir);
-
-    // First run → relaunch minimized with PowerShell (prevents console flash)
-    if (GetFileAttributesA(flagPath) == INVALID_FILE_ATTRIBUTES) {
-        FILE *f = fopen(flagPath, "w");
-        if (f) fclose(f);
-
-        char exePath[MAX_PATH];
-        GetModuleFileNameA(NULL, exePath, MAX_PATH);
-
-        char cmd[MAX_PATH + 200];
-        snprintf(cmd, sizeof(cmd),
-                 "powershell -windowstyle minimized -command \"Start-Process '%s'\"",
-                 exePath);
-        system(cmd);
-        return 0;
-    }
-
-    // Second run (now headless): delete flag, then do the work
-    DeleteFileA(flagPath);
-
-    // 1) Ping gateway (adjust for current VLAN)
-    system("ping 172.20.10.1");
-
-    // 2) Allow services to settle
-    Sleep(5000);
-
-    // 3) Launch dashboard in Edge (adjust URL)
-    system("start msedge.exe http://172.20.10.30:8000/");
-
-    return 0;
-}
+### 3. Open the dashboard
+In your browser, go to:
+```
+http://localhost:8000/index.html
 ```
 
-```bash
-src/icon.rc
-```
+---
 
-```Plaintext
-// Embed the application icon into the EXE
-IDI_ICON1 ICON "open-dash.ico"
-```
+## 🔹 Features
 
-```bash
-build.sh
-```
+1. **Authentication Quiz**
+   - On `index.html`, selecting the underscore (`_`) button redirects to the Tux Talks page.
 
-```bash
-#!/usr/bin/env bash
-set -euo pipefail
+2. **Tux Talks Page**
+   - Animated ASCII Tux cycles through messages and ends with a red warning:  
+     > ⚠️ You have just been compromised!
 
-cd "$(dirname "$0")/src"
+3. **File Uploads**
+   - Files can be uploaded through the dashboard.
+   - Backend sanitizes filenames and routes them into appropriate directories (`scripts/`, `Music-files/`, etc).
 
-# Compile resources and link a GUI app (no console window)
-x86_64-w64-mingw32-windres icon.rc -O coff -o icon.res
-x86_64-w64-mingw32-gcc open_dash.c icon.res -o ../open-dash.exe -mwindows -s
+4. **RSS Feed**
+   - `/fetch_rss` endpoint retrieves the latest 5 security news items from [SecurityWeek](https://www.securityweek.com).
 
-echo "[+] Built $(cd .. && pwd)/open-dash.exe"
-```
+5. **Awareness Traps**
+   - If a suspicious filename like `passwd` is uploaded, the server returns a harmless fake entry instead of storing it.
 
-> How It Works (brief)
+---
 
-On first launch, the EXE creates a temp flag and uses:
+## ⚠️ Ethical Use
 
-powershell -windowstyle minimized -command "Start-Process 'open-dash.exe'"
+This project is designed **for educational awareness** only:
+- Demonstrating how dashboards and file uploads work.
+- Showing how even small programs can have visible impact (e.g., redirecting to a "compromised" message).
+- Should only be run in a **controlled lab environment**.
 
+Do **not** expose this server to the public internet.
 
-to relaunch itself minimized (no console flash).
+---
 
-On the second run, it removes the flag, pings the gateway, waits, then opens the dashboard URL.
+## 🛠 Next Steps
 
-Future Work (extension ideas)
-
-Config/INI + environment variable overrides (no recompile).
-
-Auto-detect VLAN (10.x vs 172.20.x) and choose URL automatically.
-
-Add version metadata in icon.rc (FileVersion/ProductVersion).
-
-Replace system("start ...") with ShellExecuteA for default-browser launch.
+- Add screenshots to the `assets/` folder.
+- Extend the dashboard with more awareness challenges.
+- Push the repo to GitHub for portfolio use.
