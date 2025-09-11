@@ -39,7 +39,7 @@ conf t
 interface range fa0/1 - 2
  description ESXi-Uplinks
  switchport mode trunk
- switchport trunk native vlan 10
+ switchport trunk native vlan 10 <== Example Only: native 999
  switchport trunk allowed vlan 10,20
  channel-group 1 mode on
 !
