@@ -22,6 +22,16 @@ Tux, the guardian of this side, will give you cryptic hints — if you can unloc
 
 ---
 
+---
+
+## 🐧 The Guardian
+
+![Tux Talks](images/tux-screenshot.png)
+
+Tux, the guardian of this side, will give you cryptic hints — if you can unlock his speech.  
+
+---
+
 ## 🎯 Objective
 
 - Explore the environment.  
