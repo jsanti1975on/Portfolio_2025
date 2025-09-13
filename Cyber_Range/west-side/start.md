@@ -1,34 +1,37 @@
 # 🌐 West Side – Cyber Range Entry Point
 
 Welcome to the **West Side** of the Cyber-Range.  
-Type text here 
+This is your starting position — the way forward is hidden in the files and systems you can explore.  
 
 ---
 
-## 🧭 Orientation
-- Red Hat **West Side**.
-  - Text
-- Below is image of  **servera** .
-<img width="1038" height="821" alt="servera0" src="https://github.com/user-attachments/assets/6d443d8e-7ee4-4aee-a07b-798abf03aeef" />
+## 🖼️ Orientation
+
+![West Side Map](images/west-map.png)
+
+You arrive at the edge of the Cyber-Range, on the **West Side**.  
+Strange symbols and clues are scattered here.  
+
+---
+
+## 🐧 The Guardian
+
+![Tux Talks](images/tux-screenshot.png)
+
+Tux, the guardian of this side, will give you cryptic hints — if you can unlock his speech.  
 
 ---
 
 ## 🎯 Objective
-- Your mission is to **gain access to the next stage** of the Cyber-Range.
-- Text
 
----
-
-## 🛠️ Tips
-- Remember your **OverTheWire Bandit** basics:
-  - `ls -la` → list everything, even hidden files.
-  - `cat file` → read files.
-  - `unzip`, `tar`, `base64`, `xxd`, etc. may help.
-- Always think like a **hacker**: look where others don’t. 🔍
+- Explore the environment.  
+- Read the files.  
+- Follow the hidden trail to proceed deeper into the range.  
 
 ---
 
 ⚡ **Next Step:**  
-Begin by exploring the contents of this directory. The way forward lies within.
+Check out the files in this directory.  
+Remember: `ls -la` is your friend.  
 
----
+![Banner](images/banner.png)
