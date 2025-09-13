@@ -25,7 +25,7 @@ Sub SendPDFtoHR()
     Set OutApp = CreateObject("Outlook.Application")
     Set OutMail = OutApp.CreateItem(0)
 
-    HR_Email = "hr@example.com" ' 🔁 Change to actual HR email
+    HR_Email = "hr@example.com" ' {^_^}LOOKFLAG=> Change to  ai domain
 
     With OutMail
         .To = HR_Email
