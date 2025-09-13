@@ -11,13 +11,13 @@ Press ALT + F11 → VBA Editor.
 Double-click ThisWorkbook in the left pane.
 
 Paste this code:
-
+```vba
 Private Sub Workbook_Open()
     MsgBox " SECURITY AWARENESS DEMO " & vbCrLf & vbCrLf & _
            "If this had been a real malicious file, your system might already be compromised." & vbCrLf & vbCrLf & _
            " Lesson: Never enable macros from unexpected attachments.", vbCritical, "Cyber Awareness Training"
 End Sub
-
+```
 
 Save the file as Excel Macro-Enabled Workbook (.xlsm) with the name:
 
