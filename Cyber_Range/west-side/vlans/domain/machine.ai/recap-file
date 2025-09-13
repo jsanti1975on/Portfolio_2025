@@ -1,0 +1,54 @@
+# Build AvA – Cyber Awareness Range
+
+## 📌 Project Overview
+Build AvA is a cyber range and awareness training environment.  
+It integrates Windows Server labs, simulated phishing/awareness demos, and infrastructure monitoring.
+
+This project is tied directly to the **Machine.AI Windows Server Portfolio (CET2793)**.  
+That portfolio documents AD DS, DHCP, OU structures, and server configurations which serve as the backbone for AvA.
+
+---
+
+## 🖥️ Hardware Platform
+Running on a **Dell PowerEdge R730 (Renewed)**:
+- 2 × Intel Xeon E5-2678 v3 (24 cores total)
+- 64 GB RAM
+- Dell H330 RAID Controller
+- 4 × 600 GB SAS drives
+
+---
+
+## 📂 Project Components
+- **Portfolio Docs**: Windows Server 2019/AD DS environment setup  
+- **Awareness Demo**: PDF + XLSM (macro awareness training)  
+- **Infrastructure**: Domain controllers, DHCP, shared folders, quotas  
+- **Clients**: Windows 10 endpoints for testing and awareness training  
+
+---
+
+## 🔑 Current Status
+- ✅ Server builds completed  
+- ✅ AD DS + OU structure tested  
+- ✅ DHCP + client integration validated  
+- ⚠️ GPO documentation incomplete  
+- ⚠️ Awareness demo files need integration into email workflow  
+
+---
+
+## 🚧 Next Steps
+- Expand **GPO policies** and document results  
+- Deploy **Awareness Demo Package** inside HR simulation  
+- Benchmark the Dell PowerEdge R730 performance under load  
+- Integrate AvA into larger **Cyber Range projects**  
+
+---
+
+## 📎 Cross-Reference Projects
+1. **Build AvA** (this repo/folder) – Awareness + Windows Server core  
+2. **Project X** – [placeholder notes here]  
+3. **Project Y** – [placeholder notes here]  
+
+---
+
+_Last updated: {{today’s date}}_
+
