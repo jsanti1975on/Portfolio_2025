@@ -1,4 +1,4 @@
-# 🌐 machine.ai Domain (West-Side VLANs)
+# 🌐 machine.ai Domain (West-Side VLANs) | {^_^}LOOK=> We will need to move to 10.10.20.0/24 subnet 
 
 This folder will contain build documentation, diagrams, and configuration scripts
 for the **machine.ai** domain in the Cyber Range portfolio.
@@ -10,7 +10,7 @@ for the **machine.ai** domain in the Cyber Range portfolio.
 - **File Server Role:** FSRM for department shares
 - **Exchange Server**
 - **Test Clients:** Windows 10/11 workstations via DHCP
-- **Network:** 10.10.10.0/24 (lab VLAN west-side) => Test Tagged with vm pfsense since esxi host are on same subnet
+- **Network:** 10.10.20.0/24 (lab VLAN west-side) => Test Tagged with vm pfsense since esxi host are on same subnet
 
 ---
 
